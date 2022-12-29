@@ -17,7 +17,7 @@
       var password = document.getElementById("password").value;
 
       // Execute the reCAPTCHA challenge and get the response token
-      grecaptcha.execute();
+      grecaptcha();
       var captchaResponse = grecaptcha.getResponse();
 
       // Check if the CAPTCHA is valid
