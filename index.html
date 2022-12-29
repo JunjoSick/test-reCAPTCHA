@@ -17,7 +17,9 @@
       var password = document.getElementById("password").value;
 
       // Check if the CAPTCHA is valid
-      if (grecaptcha.getResponse() == "") {
+      grecaptcha.execute();
+      var captchaResponse = grecaptcha.getResponse();
+      if (captchaResponse == "") {
         // If the CAPTCHA is not valid, display an alert box
         alert("Please complete the CAPTCHA to proceed.");
         return;
