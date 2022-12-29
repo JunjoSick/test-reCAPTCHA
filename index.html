@@ -1,0 +1,37 @@
+<html>
+<head>
+  <title>Password Checker</title>
+</head>
+<body>
+  <form>
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password"><br>
+    <div class="g-recaptcha" data-sitekey="your_site_key"></div>
+    <input type="submit" value="Submit" onclick="checkPassword()">
+  </form> 
+
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script>
+    function checkPassword() {
+      // Get the password from the form
+      var password = document.getElementById("password").value;
+
+      // Check if the CAPTCHA is valid
+      if (grecaptcha.getResponse() == "") {
+        // If the CAPTCHA is not valid, display an alert box
+        alert("Please complete the CAPTCHA to proceed.");
+        return;
+      }
+
+      // Check if the password is correct
+      if (password == "correctpassword") {
+        // If the password is correct, display an alert box
+        alert("Correct password!");
+      } else {
+        // If the password is incorrect, display an alert box
+        alert("Incorrect password. Please try again.");
+      }
+    }
+  </script>
+</body>
+</html>
