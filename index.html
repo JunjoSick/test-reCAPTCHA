@@ -7,7 +7,7 @@
   <form>
     <label for="password">Password:</label><br>
     <input type="password" id="password" name="password"><br>
-    <div class="g-recaptcha" data-sitekey="6Leqc7gjAAAAAFg4AajQegdAAvLVnKncA7Uml72-"></div>
+    <div class="g-recaptcha" data-sitekey=" 6Leqc7gjAAAAAFg4AajQegdAAvLVnKncA7Uml72- "></div>
     <input type="submit" value="Submit" onclick="checkPassword()">
   </form> 
 
@@ -16,9 +16,11 @@
       // Get the password from the form
       var password = document.getElementById("password").value;
 
-      // Check if the CAPTCHA is valid
+      // Execute the reCAPTCHA challenge and get the response token
       grecaptcha.execute();
       var captchaResponse = grecaptcha.getResponse();
+
+      // Check if the CAPTCHA is valid
       if (captchaResponse == "") {
         // If the CAPTCHA is not valid, display an alert box
         alert("Please complete the CAPTCHA to proceed.");
